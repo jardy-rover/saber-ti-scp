@@ -526,4 +526,4 @@ Essa estrutura é utilizada diretamente pelas consultas relacionais do Supabase 
 
 # Objetivo do Projeto
 
-O SCP foi projetado para objetivos de prática e estudo durante o programa de treinamento SABER TI da ACCION.
+O SCP foi desenvolvido como projeto prático durante o programa de formação SABER TI da ACCION, com o objetivo de consolidar conhecimentos em desenvolvimento web, modelagem de dados e integração com banco de dados na nuvem.
