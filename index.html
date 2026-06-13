@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso ao Sistema</title>
+
+    <link rel="stylesheet" href="css/accion.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <main class="pagina" style="max-width: 480px; margin: var(--espaco-12) auto;">
+        
+        <header class="page-header" style="justify-content: center; text-align: center; flex-direction: column;">
+
+            <!--- Ícone de usuário -->
+            <div class="page-header-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 12c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z"/>
+                </svg>
+            </div>
+
+            <!--- Título e descrição --->
+            <div>
+                <h1>Portal de Acesso</h1>
+                <p>Identifique-se para acessar o sistema de gestão de orçamentos</p>
+            </div>
+        </header>
+
+        <article class="card card-destaque">
+            
+            <div class="card-header">
+                <span class="card-header-title">ÁREA RESTRITA</span>
+                <span class="card-header-badge">Seguro</span>
+            </div>
+
+            <div class="card-body">
+                <form id="formLogin" class="form-grid">
+                    
+                    <!-- E-mail corporativo -->
+                    <div class="campo span-2">
+                        <label for="username">E-mail Corporativo <span class="obrigatorio">*</span></label>
+                        <input type="email" id="emailLogin" name="username" placeholder="nome.sobrenome@empresa.com" required autocomplete="email">
+                    </div>
+
+                    <!-- Senha de acesso -->
+                    <div class="campo span-2">
+                        <label for="password">Senha de Acesso <span class="obrigatorio">*</span></label>
+                        <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="current-password">
+                    </div>
+
+                    <div id="mensagem" class="mensagem">&nbsp</div>
+
+                    <div class="campo span-2">
+                        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin: var(--espaco-2) 0;">
+                            
+                            <label class="campo-checkbox">
+                                <input type="checkbox" name="remember">
+                                <span class="checkbox-indicador"></span>
+                                <span class="checkbox-texto" style="font-size: var(--tamanho-sm);">Lembrar neste dispositivo</span>
+                            </label>
+
+                            <a href="/recuperar-usuario" style="font-size: var(--tamanho-sm); color: var(--texto-link); text-decoration: none; font-weight: 600;">
+                                Esqueceu a senha?
+                            </a>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Divisor -->
+                    <hr class="divisor">
+
+                    <!-- Botão de envio -->
+                    <div class="acoes">
+                        <button type="submit" class="btn btn-primario" style="width: 100%;">
+                            <span>Entrar no Sistema</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </article>
+
+        <p style="text-align: center; font-size: var(--tamanho-sm); margin-top: var(--espaco-4);">
+            Não possui uma conta de acesso? <a href="/cadastro-usuario.html" style="color: var(--texto-link); font-weight: 600; text-decoration: none;">Cadastre-se aqui!</a>
+        </p>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="scripts/login-usuario.js"></script>
+    <script src="scripts/global.js" defer></script>
+</body>
+</html>

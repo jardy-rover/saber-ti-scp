@@ -1,0 +1,1407 @@
+/* ============================================================
+   1. VARIÁVEIS DE COR — PALETA PRINCIPAL
+   ============================================================ */
+:root {
+
+  /* --- Azul Marinho (texto, estrutura) --- */
+  --marinho:            rgba(28, 45, 68, 1);
+  --marinho-medio:      rgba(28, 45, 68, 0.72);
+  --marinho-suave:      rgba(28, 45, 68, 0.45);
+  --marinho-fantasma:   rgba(28, 45, 68, 0.12);
+  --marinho-velatura:   rgba(28, 45, 68, 0.06);
+
+  /* --- Lima (botões, ações primárias) --- */
+  --lima:               rgba(197, 208, 44, 1);
+  --lima-claro:         rgba(220, 229, 90, 1);
+  --lima-escuro:        rgba(160, 170, 28, 1);
+  --lima-suave:         rgba(197, 208, 44, 0.18);
+  --lima-fantasma:      rgba(197, 208, 44, 0.08);
+
+  /* --- Esmeralda (hover, confirmação, sucesso) --- */
+  --esmeralda:          rgba(35, 164, 85, 1);
+  --esmeralda-claro:    rgba(72, 196, 118, 1);
+  --esmeralda-escuro:   rgba(22, 128, 65, 1);
+  --esmeralda-suave:    rgba(35, 164, 85, 0.16);
+  --esmeralda-fantasma: rgba(35, 164, 85, 0.07);
+
+  /* --- Prata (interfaces, bordas, fundos secundários) --- */
+  --prata:              rgba(229, 229, 229, 1);
+  --prata-escuro:       rgba(200, 200, 200, 1);
+  --prata-medio:        rgba(214, 214, 214, 1);
+  --prata-claro:        rgba(242, 242, 242, 1);
+  --prata-fantasma:     rgba(229, 229, 229, 0.50);
+
+  /* --- Branco (fundo, superfícies) --- */
+  --branco:             rgba(255, 255, 255, 1);
+  --branco-opaco:       rgba(255, 255, 255, 0.92);
+  --branco-velatura:    rgba(255, 255, 255, 0.60);
+  --branco-fantasma:    rgba(255, 255, 255, 0.20);
+
+
+  /* ============================================================
+     2. VARIÁVEIS DE FEEDBACK VISUAL
+     ============================================================ */
+
+  /* Perigo / Erro */
+  --perigo:             rgba(214, 50, 50, 1);
+  --perigo-claro:       rgba(240, 90, 90, 1);
+  --perigo-escuro:      rgba(170, 28, 28, 1);
+  --perigo-suave:       rgba(214, 50, 50, 0.14);
+  --perigo-fantasma:    rgba(214, 50, 50, 0.07);
+
+  /* Atenção / Alerta */
+  --atencao:            rgba(230, 150, 20, 1);
+  --atencao-claro:      rgba(255, 180, 60, 1);
+  --atencao-escuro:     rgba(180, 110, 8, 1);
+  --atencao-suave:      rgba(230, 150, 20, 0.15);
+  --atencao-fantasma:   rgba(230, 150, 20, 0.07);
+
+  /* Info / Neutro */
+  --info:               rgba(42, 120, 210, 1);
+  --info-claro:         rgba(80, 155, 240, 1);
+  --info-escuro:        rgba(22, 80, 160, 1);
+  --info-suave:         rgba(42, 120, 210, 0.14);
+  --info-fantasma:      rgba(42, 120, 210, 0.07);
+
+  /* Sucesso (alias semântico → esmeralda) */
+  --sucesso:            var(--esmeralda);
+  --sucesso-claro:      var(--esmeralda-claro);
+  --sucesso-escuro:     var(--esmeralda-escuro);
+  --sucesso-suave:      var(--esmeralda-suave);
+  --sucesso-fantasma:   var(--esmeralda-fantasma);
+
+
+  /* ============================================================
+     3. ALIASES SEMÂNTICOS — INTERFACE
+     ============================================================ */
+
+  /* Texto */
+  --texto-primario:     var(--marinho);
+  --texto-secundario:   var(--marinho-medio);
+  --texto-terciario:    var(--marinho-suave);
+  --texto-desabilitado: var(--marinho-suave);
+  --texto-inverso:      var(--branco);
+  --texto-link:         var(--esmeralda-escuro);
+  --texto-link-hover:   var(--esmeralda);
+
+  /* Fundo */
+  --fundo-pagina:       var(--branco);
+  --fundo-card:         var(--branco);
+  --fundo-secao:        var(--prata-claro);
+  --fundo-destaque:     var(--lima-fantasma);
+  --fundo-hover:        var(--prata-claro);
+  --fundo-ativo:        var(--lima-suave);
+  --fundo-overlay:      rgba(28, 45, 68, 0.48);
+
+  /* Bordas */
+  --borda-padrao:       var(--prata);
+  --borda-forte:        var(--prata-escuro);
+  --borda-suave:        var(--prata-claro);
+  --borda-foco:         var(--lima);
+  --borda-erro:         var(--perigo);
+  --borda-sucesso:      var(--esmeralda);
+
+  /* Botão Primário */
+  --btn-primario-fundo:          var(--lima);
+  --btn-primario-texto:          var(--marinho);
+  --btn-primario-fundo-hover:    var(--esmeralda);
+  --btn-primario-texto-hover:    var(--branco);
+  --btn-primario-fundo-ativo:    var(--esmeralda-escuro);
+  --btn-primario-fundo-disabled: var(--prata);
+  --btn-primario-texto-disabled: var(--marinho-suave);
+
+  /* Botão Secundário */
+  --btn-secundario-fundo:        transparent;
+  --btn-secundario-texto:        var(--marinho);
+  --btn-secundario-borda:        var(--prata-escuro);
+  --btn-secundario-fundo-hover:  var(--prata-claro);
+  --btn-secundario-borda-hover:  var(--marinho-suave);
+
+  /* Botão Fantasma (ghost) */
+  --btn-ghost-texto:             var(--marinho-medio);
+  --btn-ghost-fundo-hover:       var(--marinho-velatura);
+  --btn-ghost-texto-hover:       var(--marinho);
+
+  /* Botão Perigo */
+  --btn-perigo-fundo:            var(--perigo);
+  --btn-perigo-texto:            var(--branco);
+  --btn-perigo-fundo-hover:      var(--perigo-escuro);
+
+  /* Inputs / Campos */
+  --input-fundo:         var(--branco);
+  --input-borda:         var(--prata-escuro);
+  --input-borda-hover:   var(--marinho-suave);
+  --input-borda-foco:    var(--lima);
+  --input-borda-erro:    var(--perigo);
+  --input-borda-sucesso: var(--esmeralda);
+  --input-placeholder:   var(--marinho-suave);
+  --input-texto:         var(--marinho);
+
+  /* Tabelas */
+  --tabela-header-fundo: var(--marinho);
+  --tabela-header-texto: var(--branco);
+  --tabela-linha-par:    var(--branco);
+  --tabela-linha-impar:  var(--prata-claro);
+  --tabela-linha-hover:  var(--lima-fantasma);
+  --tabela-borda:        var(--prata);
+
+  /* Badges / Tags */
+  --badge-sucesso-fundo: var(--esmeralda-suave);
+  --badge-sucesso-texto: var(--esmeralda-escuro);
+  --badge-perigo-fundo:  var(--perigo-suave);
+  --badge-perigo-texto:  var(--perigo-escuro);
+  --badge-atencao-fundo: var(--atencao-suave);
+  --badge-atencao-texto: var(--atencao-escuro);
+  --badge-info-fundo:    var(--info-suave);
+  --badge-info-texto:    var(--info-escuro);
+  --badge-neutro-fundo:  var(--prata);
+  --badge-neutro-texto:  var(--marinho-medio);
+
+  /* Sombras */
+  --sombra-xs:  0 1px 3px rgba(28, 45, 68, 0.08);
+  --sombra-sm:  0 2px 6px rgba(28, 45, 68, 0.10);
+  --sombra-md:  0 4px 16px rgba(28, 45, 68, 0.12);
+  --sombra-lg:  0 8px 32px rgba(28, 45, 68, 0.14);
+  --sombra-xl:  0 16px 48px rgba(28, 45, 68, 0.18);
+  --sombra-foco-lima:      0 0 0 3px rgba(197, 208, 44, 0.38);
+  --sombra-foco-esmeralda: 0 0 0 3px rgba(35, 164, 85, 0.30);
+  --sombra-foco-perigo:    0 0 0 3px rgba(214, 50, 50, 0.25);
+
+  /* Tipografia */
+  --fonte-display:  'Sora', 'DM Sans', sans-serif;
+  --fonte-corpo:    'DM Sans', 'Sora', sans-serif;
+  --fonte-mono:     'JetBrains Mono', 'Fira Code', monospace;
+
+  --tamanho-xs:   0.70rem;
+  --tamanho-sm:   0.825rem;
+  --tamanho-base: 0.9375rem;
+  --tamanho-md:   1.0625rem;
+  --tamanho-lg:   1.25rem;
+  --tamanho-xl:   1.5rem;
+  --tamanho-2xl:  1.875rem;
+  --tamanho-3xl:  2.25rem;
+
+  /* Espaçamento */
+  --espaco-1:  0.25rem;
+  --espaco-2:  0.50rem;
+  --espaco-3:  0.75rem;
+  --espaco-4:  1.00rem;
+  --espaco-5:  1.25rem;
+  --espaco-6:  1.50rem;
+  --espaco-8:  2.00rem;
+  --espaco-10: 2.50rem;
+  --espaco-12: 3.00rem;
+  --espaco-16: 4.00rem;
+
+  /* Raios de borda */
+  --raio-sm:   4px;
+  --raio-md:   8px;
+  --raio-lg:   12px;
+  --raio-xl:   16px;
+  --raio-pill: 9999px;
+
+  /* Transições */
+  --transicao-rapida:  all 0.15s ease;
+  --transicao-padrao:  all 0.22s ease;
+  --transicao-suave:   all 0.35s ease;
+}
+
+
+/* ============================================================
+   4. RESET E BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-corpo);
+  font-size: var(--tamanho-base);
+  color: var(--texto-primario);
+  background-color: var(--fundo-secao);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: var(--espaco-8) var(--espaco-4);
+}
+
+
+/* ============================================================
+   5. TIPOGRAFIA
+   ============================================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fonte-display);
+  color: var(--texto-primario);
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+h1 { font-size: var(--tamanho-3xl); }
+h2 { font-size: var(--tamanho-2xl); }
+h3 { font-size: var(--tamanho-xl);  }
+h4 { font-size: var(--tamanho-lg);  }
+h5 { font-size: var(--tamanho-md);  }
+h6 { font-size: var(--tamanho-base);}
+
+p { color: var(--texto-secundario); line-height: 1.7; }
+
+.texto-primario   { color: var(--texto-primario);   }
+.texto-secundario { color: var(--texto-secundario); }
+.texto-terciario  { color: var(--texto-terciario);  }
+.texto-inverso    { color: var(--texto-inverso);    }
+.texto-sucesso    { color: var(--sucesso);           }
+.texto-perigo     { color: var(--perigo);            }
+.texto-atencao    { color: var(--atencao);           }
+.texto-info       { color: var(--info);              }
+
+code, pre, .mono { font-family: var(--fonte-mono); }
+
+
+/* ============================================================
+   6. BOTÕES
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaco-2);
+  padding: var(--espaco-3) var(--espaco-6);
+  font-family: var(--fonte-corpo);
+  font-size: var(--tamanho-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1.5px solid transparent;
+  border-radius: var(--raio-md);
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transicao-padrao);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--sombra-foco-lima);
+}
+
+/* Ícone SVG dentro de botões */
+.btn svg {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.icone-mais {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* Primário */
+.btn-primario {
+  background-color: var(--btn-primario-fundo);
+  color: var(--btn-primario-texto);
+  border-color: var(--btn-primario-fundo);
+}
+.btn-primario:hover {
+  background-color: var(--btn-primario-fundo-hover);
+  border-color: var(--btn-primario-fundo-hover);
+  color: var(--btn-primario-texto-hover);
+  box-shadow: var(--sombra-sm);
+  transform: translateY(-1px);
+}
+.btn-primario:active {
+  background-color: var(--btn-primario-fundo-ativo);
+  border-color: var(--btn-primario-fundo-ativo);
+  transform: translateY(0);
+  box-shadow: none;
+}
+.btn-primario:disabled,
+.btn-primario[aria-disabled="true"] {
+  background-color: var(--btn-primario-fundo-disabled);
+  border-color: var(--btn-primario-fundo-disabled);
+  color: var(--btn-primario-texto-disabled);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Secundário */
+.btn-secundario {
+  background-color: var(--btn-secundario-fundo);
+  color: var(--btn-secundario-texto);
+  border-color: var(--btn-secundario-borda);
+}
+.btn-secundario:hover {
+  background-color: var(--btn-secundario-fundo-hover);
+  border-color: var(--btn-secundario-borda-hover);
+}
+.btn-secundario:focus-visible {
+  box-shadow: var(--sombra-foco-lima);
+}
+
+/* Ghost */
+.btn-ghost {
+  background-color: transparent;
+  color: var(--btn-ghost-texto);
+  border-color: transparent;
+}
+.btn-ghost:hover {
+  background-color: var(--btn-ghost-fundo-hover);
+  color: var(--btn-ghost-texto-hover);
+}
+
+/* Perigo */
+.btn-perigo {
+  background-color: var(--btn-perigo-fundo);
+  color: var(--btn-perigo-texto);
+  border-color: var(--btn-perigo-fundo);
+}
+.btn-perigo:hover {
+  background-color: var(--btn-perigo-fundo-hover);
+  border-color: var(--btn-perigo-fundo-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--sombra-sm);
+}
+.btn-perigo:focus-visible {
+  box-shadow: var(--sombra-foco-perigo);
+}
+
+/* Tamanhos */
+.btn-sm   { padding: var(--espaco-2) var(--espaco-4); font-size: var(--tamanho-xs); }
+.btn-lg   { padding: var(--espaco-4) var(--espaco-8); font-size: var(--tamanho-md); border-radius: var(--raio-lg); }
+
+/* Pill / Pílula */
+.btn-pill,
+.btn-pilula {
+  border-radius: var(--raio-pill);
+}
+
+/* Ícone */
+.btn-icone {
+  padding: var(--espaco-3);
+  aspect-ratio: 1;
+  border-radius: var(--raio-md);
+}
+
+/* Botões desabilitados (global) */
+button:disabled,
+.btnVisualizar:disabled,
+#btnEditar:disabled,
+#btnExcluir:disabled,
+#btnImprimir:disabled {
+  background-color: var(--tabela-borda) !important;
+  color: var(--texto-terciario) !important;
+  border-color: transparent !important;
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none !important;
+}
+
+
+/* ============================================================
+   7. INPUTS / CAMPOS DE FORMULÁRIO
+   ============================================================ */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-2);
+}
+
+/* Label — aceita tanto .campo-label quanto .campo label */
+.campo-label,
+.campo label {
+  font-size: var(--tamanho-sm);
+  font-weight: 600;
+  color: var(--texto-primario);
+}
+
+.campo label .obrigatorio {
+  color: var(--perigo);
+  margin-left: 2px;
+}
+
+/* Inputs, selects e textareas — aceita tanto classes explícitas quanto filhos diretos de .campo */
+.campo-input,
+.campo-select,
+.campo-textarea,
+.campo input,
+.campo select {
+  width: 100%;
+  padding: var(--espaco-3) var(--espaco-4);
+  font-family: var(--fonte-corpo);
+  font-size: var(--tamanho-base);
+  color: var(--input-texto);
+  background-color: var(--input-fundo);
+  border: 1.5px solid var(--input-borda);
+  border-radius: var(--raio-md);
+  transition: var(--transicao-padrao);
+  outline: none;
+  appearance: none;
+}
+
+.campo-input::placeholder,
+.campo-textarea::placeholder,
+.campo input::placeholder {
+  color: var(--input-placeholder);
+}
+
+.campo-input:hover,
+.campo-select:hover,
+.campo-textarea:hover,
+.campo input:hover,
+.campo select:hover {
+  border-color: var(--input-borda-hover);
+}
+
+.campo-input:focus,
+.campo-select:focus,
+.campo-textarea:focus,
+.campo input:focus,
+.campo select:focus {
+  border-color: var(--input-borda-foco);
+  box-shadow: var(--sombra-foco-lima);
+}
+
+.campo input[readonly] {
+  background-color: var(--fundo-secao);
+  color: var(--texto-terciario);
+  cursor: default;
+}
+
+/* Estados de validação */
+.campo-input.erro,
+.campo-input[aria-invalid="true"] {
+  border-color: var(--input-borda-erro);
+  background-color: var(--perigo-fantasma);
+}
+.campo-input.erro:focus {
+  box-shadow: var(--sombra-foco-perigo);
+}
+
+.campo-input.sucesso {
+  border-color: var(--input-borda-sucesso);
+  background-color: var(--esmeralda-fantasma);
+}
+.campo-input.sucesso:focus {
+  box-shadow: var(--sombra-foco-esmeralda);
+}
+
+/* Mensagens auxiliares — aceita tanto .campo-mensagem quanto .campo-hint */
+.campo-mensagem,
+.campo .campo-hint {
+  font-size: var(--tamanho-xs);
+  color: var(--texto-terciario);
+}
+.campo-mensagem.erro    { color: var(--perigo);  }
+.campo-mensagem.sucesso { color: var(--sucesso); }
+.campo-mensagem.atencao { color: var(--atencao); }
+
+/* Select com seta customizada */
+.campo-select-wrap {
+  position: relative;
+}
+.campo-select-wrap select {
+  padding-right: var(--espaco-8);
+}
+.campo-select-wrap::after {
+  content: '';
+  position: absolute;
+  right: var(--espaco-4);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--marinho-suave);
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   7.1. CHECKBOX CUSTOMIZADO
+   ============================================================ */
+.campo-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-3);
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--fonte-corpo);
+  font-size: var(--tamanho-base);
+  color: var(--texto-secundario);
+  position: relative;
+}
+
+/* Esconde o checkbox nativo mas mantém acessível para leitores de tela */
+.campo-checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* O indicador visual quadrado */
+.checkbox-indicador {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--input-borda);
+  border-radius: var(--raio-sm);
+  background-color: var(--input-fundo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transicao-rapida);
+  flex-shrink: 0;
+}
+
+.campo-checkbox:hover input[type="checkbox"] ~ .checkbox-indicador {
+  border-color: var(--input-borda-hover);
+}
+
+/* Estado: Marcado */
+.campo-checkbox input[type="checkbox"]:checked ~ .checkbox-indicador {
+  background-color: var(--lima);
+  border-color: var(--lima);
+}
+
+/* Check (✓) via pseudo-elemento */
+.checkbox-indicador::after {
+  content: "";
+  width: 5px;
+  height: 10px;
+  border: solid var(--marinho);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.1s ease-in-out;
+  margin-bottom: 2px;
+}
+.campo-checkbox input[type="checkbox"]:checked ~ .checkbox-indicador::after {
+  transform: rotate(45deg) scale(1);
+}
+
+/* Estado: Foco (acessibilidade via teclado) */
+.campo-checkbox input[type="checkbox"]:focus-visible ~ .checkbox-indicador {
+  box-shadow: var(--sombra-foco-lima);
+  border-color: var(--lima);
+}
+
+/* Estado: Desabilitado */
+.campo-checkbox input[type="checkbox"]:disabled ~ .checkbox-indicador {
+  background-color: var(--prata);
+  border-color: var(--prata-escuro);
+  cursor: not-allowed;
+}
+.campo-checkbox input[type="checkbox"]:disabled ~ .checkbox-texto {
+  color: var(--texto-desabilitado);
+  cursor: not-allowed;
+}
+
+
+/* ============================================================
+   7.2. BARRA DE PESQUISA CUSTOMIZADA
+   ============================================================ */
+.barra-pesquisa-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.barra-pesquisa {
+  width: 100%;
+  padding: var(--espaco-3) var(--espaco-4);
+  padding-left: calc(var(--espaco-4) + 24px);
+  font-family: var(--fonte-corpo);
+  font-size: var(--tamanho-base);
+  color: var(--input-texto);
+  background-color: var(--input-fundo);
+  border: 1.5px solid var(--input-borda);
+  border-radius: var(--raio-pill);
+  outline: none;
+  transition: var(--transicao-padrao);
+}
+.barra-pesquisa:hover {
+  border-color: var(--input-borda-hover);
+}
+.barra-pesquisa:focus {
+  border-color: var(--input-borda-foco);
+  box-shadow: var(--sombra-foco-lima);
+  background-color: var(--branco);
+}
+
+/* Ícone de lupa */
+.barra-pesquisa-wrap .icon-lupa {
+  position: absolute;
+  left: var(--espaco-4);
+  width: 16px;
+  height: 16px;
+  stroke: var(--marinho-suave);
+  fill: none;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+  transition: var(--transicao-rapida);
+}
+.barra-pesquisa:focus + .icon-lupa {
+  stroke: var(--marinho);
+}
+
+/* Botão nativo de limpar */
+.barra-pesquisa::-webkit-search-cancel-button {
+  appearance: none;
+  height: 14px;
+  width: 14px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgba(28, 45, 68, 0.45)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><line x1='18' y1='6' x2='6' y2='18'></line><line x1='6' y1='6' x2='18' y2='18'></line></svg>");
+  background-size: contain;
+  cursor: pointer;
+  transition: var(--transicao-rapida);
+}
+.barra-pesquisa::-webkit-search-cancel-button:hover {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgba(214, 50, 50, 1)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><line x1='18' y1='6' x2='6' y2='18'></line><line x1='6' y1='6' x2='18' y2='18'></line></svg>");
+}
+
+
+/* ============================================================
+   8. CARDS
+   ============================================================ */
+.card {
+  background-color: var(--fundo-card);
+  border: 1px solid var(--borda-padrao);
+  border-radius: var(--raio-lg);
+  padding: 0;
+  margin-bottom: var(--espaco-6);
+  box-shadow: var(--sombra-xs);
+  transition: var(--transicao-padrao);
+}
+.card:hover { box-shadow: var(--sombra-md); }
+
+.card-destaque {
+  border-color: var(--lima);
+  box-shadow: var(--sombra-sm), 0 0 0 1px var(--lima-suave);
+}
+.card-perigo  { border-color: var(--perigo);   background-color: var(--perigo-fantasma);    }
+.card-sucesso { border-color: var(--sucesso);  background-color: var(--esmeralda-fantasma); }
+.card-atencao { border-color: var(--atencao);  background-color: var(--atencao-fantasma);   }
+.card-info    { border-color: var(--info);     background-color: var(--info-fantasma);      }
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--espaco-5) var(--espaco-6);
+  border-bottom: 1px solid var(--borda-padrao);
+}
+.card-header-title {
+  font-family: var(--fonte-display);
+  font-size: var(--tamanho-sm);
+  font-weight: 700;
+  color: var(--texto-primario);
+  letter-spacing: 0.01em;
+}
+.card-header-badge {
+  font-size: var(--tamanho-xs);
+  font-weight: 600;
+  background-color: var(--lima-suave);
+  color: var(--marinho);
+  padding: 3px var(--espaco-3);
+  border-radius: var(--raio-pill);
+  letter-spacing: 0.03em;
+}
+.card-body {
+  padding: var(--espaco-6);
+}
+
+/* ============================================================
+   9. TABELAS (Versão Compacta para Telas Densas/Produtos)
+   ============================================================ */
+.tabela-wrapper {
+  width: 100%;
+  overflow-x: auto; /* Se a tela for muito pequena, cria um scroll interno apenas na tabela, sem quebrar a página */
+  box-sizing: border-box;
+}
+
+.tabela {
+  width: 100%;
+  table-layout: fixed; /* Força o navegador a respeitar rigidamente as larguras das colunas */
+  border-collapse: collapse;
+}
+
+.tabela thead tr {
+  background-color: var(--tabela-header-fundo);
+  color: var(--tabela-header-texto);
+}
+
+.tabela thead th {
+  /* Reduzido de espaco-4/5 para espaco-2/3 para achatar a altura e largura das células */
+  padding: var(--espaco-2, 8px) var(--espaco-3, 12px); 
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-size: var(--tamanho-xs); /* Mantida a fonte pequena e legível */
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Garante que cabeçalhos longos também não quebrem o layout */
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.tabela thead th:first-child {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.tabela tbody tr {
+  border-bottom: 1px solid var(--tabela-borda);
+  transition: var(--transicao-rapida);
+}
+
+/* Listrado (zebra) */
+.tabela tbody tr:nth-child(odd)  { background-color: var(--tabela-linha-par);   }
+.tabela tbody tr:nth-child(even) { background-color: var(--tabela-linha-impar); }
+
+.tabela tbody tr:hover { background-color: var(--tabela-linha-hover); }
+.tabela tbody tr:last-child { border-bottom: none; }
+
+.tabela tbody td {
+  /* Reduzido o padding para espremer o conteúdo vertical e horizontalmente */
+  padding: var(--espaco-2, 8px) var(--espaco-3, 12px); 
+  color: var(--texto-secundario);
+  vertical-align: middle;
+  font-size: var(--tamanho-xs, 13px); /* Reduz o tamanho da fonte dos dados para ganhar espaço */
+  
+  /* O SEGREDO DA CONTENÇÃO: Impede que textos gigantes de descrição/observação estiquem a tabela */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Células semânticas */
+.tabela tbody td.td-codigo {
+  color: var(--texto-terciario);
+  font-size: var(--tamanho-xs);
+  font-weight: 500;
+}
+
+.tabela tbody td.td-nome {
+  color: var(--texto-primario);
+  font-weight: 500;
+}
+
+.tabela tbody td.td-acoes {
+  white-space: nowrap;
+}
+
+/* Linha selecionada */
+.tabela tbody tr.linha-selecionada {
+  background-color: var(--lima-suave) !important;
+  color: var(--marinho);
+  box-shadow: inset 4px 0 0 0 var(--lima);
+}
+
+.tabela tbody tr.linha-selecionada td {
+  color: var(--marinho);
+  font-weight: 500;
+}
+
+.tabela tbody tr.linha-selecionada:hover {
+  background-color: var(--lima-fantasma) !important;
+}
+
+/* Opcional: Se quiser dar um respiro maior para uma coluna específica (ex: descrição), 
+   você pode permitir que ela quebre linha em vez de cortar com três pontos (...) 
+   adicionando uma classe específica no HTML e controlando por aqui: */
+.tabela tbody td.td-permitir-quebra {
+  white-space: normal;
+  word-break: break-word;
+}
+
+.tabela tbody td.td-acoes {
+  display: flex;
+  flex-direction: column;  /* Empilha os elementos verticalmente */
+  gap: var(--espaco-1, 4px); /* Define um espaço pequeno e controlado entre os botões */
+  align-items: stretch;    /* Força todos os botões a terem a mesma largura horizontal */
+  white-space: normal;     /* Permite a nova organização do fluxo do layout */
+  padding: var(--espaco-2) var(--espaco-3);
+}
+
+/* Ajuste fino para os botões dentro da tabela */
+.tabela tbody td.td-acoes .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;        /* Padding interno reduzido para os botões não ficarem gigantes */
+  font-size: 11px;         /* Texto ultra-compacto para caber na linha da tabela */
+  width: 100%;             /* Garante o preenchimento total do espaço da coluna */
+  box-sizing: border-box;
+}
+
+
+/* ============================================================
+   10. BADGES / TAGS DE STATUS
+   ============================================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-1);
+  padding: 2px var(--espaco-3);
+  font-size: var(--tamanho-xs);
+  font-weight: 600;
+  border-radius: var(--raio-pill);
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+}
+
+.badge-sucesso { background-color: var(--badge-sucesso-fundo); color: var(--badge-sucesso-texto); }
+.badge-perigo  { background-color: var(--badge-perigo-fundo);  color: var(--badge-perigo-texto);  }
+.badge-atencao { background-color: var(--badge-atencao-fundo); color: var(--badge-atencao-texto); }
+.badge-info    { background-color: var(--badge-info-fundo);    color: var(--badge-info-texto);    }
+.badge-neutro  { background-color: var(--badge-neutro-fundo);  color: var(--badge-neutro-texto);  }
+.badge-lima    { background-color: var(--lima-suave);          color: var(--marinho);             }
+
+
+/* ============================================================
+   11. ALERTAS / NOTIFICAÇÕES
+   ============================================================ */
+.alerta {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espaco-4);
+  padding: var(--espaco-4) var(--espaco-5);
+  border-radius: var(--raio-md);
+  border-left: 4px solid transparent;
+  font-size: var(--tamanho-sm);
+  line-height: 1.6;
+}
+
+.alerta-sucesso { background-color: var(--esmeralda-suave); border-color: var(--sucesso);      color: var(--esmeralda-escuro); }
+.alerta-perigo  { background-color: var(--perigo-suave);    border-color: var(--perigo);        color: var(--perigo-escuro);    }
+.alerta-atencao { background-color: var(--atencao-suave);   border-color: var(--atencao);       color: var(--atencao-escuro);   }
+.alerta-info    { background-color: var(--info-suave);      border-color: var(--info);          color: var(--info-escuro);      }
+.alerta-neutro  { background-color: var(--prata-claro);     border-color: var(--prata-escuro);  color: var(--marinho-medio);    }
+
+
+/* ============================================================
+   12. NAVEGAÇÃO / SIDEBAR
+   ============================================================ */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-3);
+  padding: var(--espaco-3) var(--espaco-4);
+  border-radius: var(--raio-md);
+  color: var(--texto-secundario);
+  font-size: var(--tamanho-sm);
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transicao-padrao);
+  cursor: pointer;
+}
+.nav-item:hover {
+  background-color: var(--fundo-hover);
+  color: var(--texto-primario);
+}
+.nav-item.ativo {
+  background-color: var(--fundo-ativo);
+  color: var(--marinho);
+  font-weight: 600;
+  border-left: 3px solid var(--lima);
+  padding-left: calc(var(--espaco-4) - 3px);
+}
+
+
+/* ============================================================
+   13. SKELETON / LOADING
+   ============================================================ */
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.skeleton {
+  background-color: var(--prata);
+  border-radius: var(--raio-sm);
+  animation: skeleton-pulse 1.6s ease-in-out infinite;
+}
+
+
+/* ============================================================
+   14. UTILITÁRIOS
+   ============================================================ */
+
+/* Separador */
+.divisor {
+  width: 100%;
+  height: 1px;
+  background-color: var(--borda-padrao);
+  border: none;
+  margin: var(--espaco-4) 0;
+}
+
+/* Overlay / Modal backdrop */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  pointer-events: none;
+  transition: background 0.3s;
+  z-index: 100;
+}
+.overlay.active {
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: all;
+}
+
+/* Scroll personalizado */
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--prata-claro); }
+::-webkit-scrollbar-thumb {
+  background: var(--prata-escuro);
+  border-radius: var(--raio-pill);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--marinho-suave); }
+
+/* Seleção de texto */
+::selection {
+  background-color: var(--lima-suave);
+  color: var(--marinho);
+}
+
+/* Bloqueio de rolagem (usado junto com drawer/modal) */
+body.sem-rolagem {
+  overflow: hidden;
+}
+
+
+/* ============================================================
+   15. LAYOUT DE PÁGINA
+   ============================================================ */
+.pagina {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.margem-lateral {
+  margin-left: 90px;
+  margin-right: 90px;
+}
+
+
+/* ============================================================
+   16. CABEÇALHO DE PÁGINA
+   ============================================================ */
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-4);
+  margin-bottom: var(--espaco-8);
+}
+
+.page-header-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--raio-md);
+  background-color: var(--marinho);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.page-header-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--lima);
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.page-header h1 {
+  font-size: var(--tamanho-xl);
+  line-height: 1.2;
+}
+.page-header p {
+  font-size: var(--tamanho-sm);
+  color: var(--texto-secundario);
+  margin-top: 2px;
+}
+
+
+/* ============================================================
+   17. CABEÇALHO DE SEÇÃO
+   ============================================================ */
+.secao-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--espaco-4);
+}
+
+.secao-titulo {
+  font-family: var(--fonte-display);
+  font-size: var(--tamanho-md);
+  font-weight: 700;
+  color: var(--texto-primario);
+}
+
+.contagem-badge {
+  font-size: var(--tamanho-xs);
+  font-weight: 600;
+  background-color: var(--marinho-fantasma);
+  color: var(--texto-secundario);
+  padding: 2px var(--espaco-3);
+  border-radius: var(--raio-pill);
+}
+
+
+/* ============================================================
+   18. FORMULÁRIO — GRADE E EXTENSÕES
+   ============================================================ */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espaco-4);
+}
+
+.campo.span-2 {
+  grid-column: span 2;
+}
+
+/* Área de ações do formulário */
+.acoes {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--espaco-3);
+  padding-top: var(--espaco-2);
+}
+
+/* Botão cancelar edição — oculto por padrão, JS controla */
+#btnCancelarEdicao {
+  display: none;
+}
+
+
+/* ============================================================
+   19. MENSAGEM DE FEEDBACK (alerta inline no formulário)
+   ============================================================ */
+.mensagem-feedback {
+  display: none;
+  align-items: flex-start;
+  gap: var(--espaco-3);
+  padding: var(--espaco-3) var(--espaco-4);
+  border-radius: var(--raio-md);
+  font-size: var(--tamanho-sm);
+  font-weight: 500;
+  margin-bottom: var(--espaco-5);
+  border-left: 3px solid transparent;
+}
+.mensagem-feedback.visivel { display: flex; }
+
+.mensagem-feedback svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mensagem-feedback.sucesso { background-color: var(--esmeralda-suave);  color: var(--esmeralda-escuro); border-color: var(--esmeralda); }
+.mensagem-feedback.erro    { background-color: var(--perigo-fantasma);   color: var(--perigo);           border-color: var(--perigo);    }
+.mensagem-feedback.atencao { background-color: var(--atencao-suave);     color: var(--atencao-escuro);   border-color: var(--atencao);   }
+
+
+/* ============================================================
+   20. DRAWER (painel lateral deslizante)
+   ============================================================ */
+.drawer {
+  overflow-y: auto;
+  background-color: var(--fundo-pagina);
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: var(--espaco-8);
+  height: 100%;
+  width: 60%;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
+  z-index: 101;
+}
+.drawer.open { transform: translateX(0); }
+
+/* ============================================================
+   21. TABELA BASE
+   ============================================================ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--fonte-corpo);
+  font-size: var(--tamanho-sm);
+  color: var(--texto-secundario);
+  background-color: var(--fundo-card);
+  border-radius: var(--raio-lg);
+  overflow: hidden;
+  box-shadow: var(--sombra-xs);
+}
+
+thead tr {
+  background-color: var(--tabela-header-fundo);
+}
+
+th {
+  background-color: var(--tabela-header-fundo);
+  color: var(--tabela-header-texto);
+  padding: var(--espaco-4) var(--espaco-5);
+  text-align: left;
+  font-weight: 600;
+  font-size: var(--tamanho-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--tabela-borda);
+}
+
+td {
+  padding: var(--espaco-4) var(--espaco-5);
+  border-bottom: 1px solid var(--tabela-borda);
+  color: var(--texto-secundario);
+  vertical-align: middle;
+  text-align: left;
+}
+
+tbody tr {
+  transition: var(--transicao-rapida);
+}
+
+tbody tr:nth-child(odd)  { background-color: var(--tabela-linha-par);   }
+tbody tr:nth-child(even) { background-color: var(--tabela-linha-impar); }
+
+tbody tr:hover {
+  background-color: var(--tabela-linha-hover);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Suporte à linha selecionada também na tabela padrão */
+tbody tr.linha-selecionada {
+  background-color: var(--lima-suave) !important;
+  color: var(--marinho);
+  box-shadow: inset 4px 0 0 0 var(--lima);
+}
+
+tbody tr.linha-selecionada td {
+  color: var(--marinho);
+  font-weight: 500;
+}
+
+tbody tr.linha-selecionada:hover {
+  background-color: var(--lima-fantasma) !important;
+}
+
+/* ============================================================
+   22. COMPONENTES INTERNOS DA TABELA (Botões e Badges)
+   ============================================================ */
+.td-acoes-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-1);
+}
+
+/* Botão Editar */
+.btn-editar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; /* Centraliza o texto e ícone na largura fixa */
+  gap: var(--espaco-1);
+  width: 90px;             /* Define o mesmo comprimento para ambos */
+  margin: 4px 8px;         /* 4px vertical (cima/baixo) e 8px horizontal (lados) */
+  padding: var(--espaco-2) var(--espaco-3);
+  font-family: var(--fonte-corpo);
+  font-size: var(--tamanho-xs);
+  font-weight: 600;
+  background-color: var(--atencao-suave);
+  color: var(--atencao-escuro);
+  border: none;
+  border-radius: var(--raio-sm);
+  cursor: pointer;
+  transition: var(--transicao-padrao);
+}
+
+.btn-editar:hover {
+  background-color: rgba(230, 150, 20, 0.28); /* Tom de atenção ligeiramente mais escuro no hover */
+}
+
+/* Botão Excluir */
+.btn-excluir {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; /* Centraliza o texto e ícone na largura fixa */
+  gap: var(--espaco-1);
+  width: 90px;             /* Define o mesmo comprimento para ambos */
+  margin: 4px 8px;         /* 4px vertical (cima/baixo) e 8px horizontal (lados) */
+  padding: var(--espaco-2) var(--espaco-3);
+  font-family: var(--fonte-corpo);
+  font-size: var(--tamanho-xs);
+  font-weight: 600;
+  background-color: var(--perigo-suave);
+  color: var(--perigo);
+  border: none;
+  border-radius: var(--raio-sm);
+  cursor: pointer;
+  transition: var(--transicao-padrao);
+}
+
+.btn-excluir:hover {
+  background-color: rgba(214, 50, 50, 0.24); /* Tom de perigo ligeiramente mais escuro no hover */
+}
+
+.btnConfirmarExcluir {
+  background-color: var(--perigo);
+  color: var(--branco);
+}
+
+
+/* Ícones SVG dentro dos botões da tabela */
+.btn-editar svg,
+.btn-excluir svg {
+  width: 13px;
+  height: 13px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+.main-container {
+  margin-left: 120px; /* Recuo fixo para respeitar a sua sidebar */
+  
+  /* Faz a largura ser 100% da tela, subtraindo os 200px da esquerda 
+     e mais 200px para espelhar a mesma margem na direita */
+  width: calc(100vw - 400px); 
+  
+  /* Mantém o limite máximo que você estipulou para o conteúdo */
+  max-width: 1200px; 
+  
+  box-sizing: border-box;
+}
+
+/* Garante que qualquer input ou select bloqueado tenha o fundo cinza e o texto suave */
+input:disabled, 
+select:disabled {
+    background-color: #e9ecef; /* Um cinza claro padrão, mude a cor se preferir */
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+
+/* ============================================================
+   NOTIFICAÇÃO POPUP (TOAST) - INFERIOR DIREITO
+   ============================================================ */
+.mensagem {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999; /* Garante que fique acima de overlays e do drawer */
+  
+  /* Visual do Card (Pode ajustar com as variáveis do seu sistema) */
+  background-color: var(--marinho, #0f172a);
+  color: var(--lima, #a3e635);
+  padding: var(--espaco-3, 12px) var(--espaco-5, 20px);
+  border-radius: var(--raio-md, 8px);
+  font-size: var(--tamanho-sm, 14px);
+  font-weight: 500;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  
+  /* Estado Inicial: Oculto e empurrado para baixo */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100px);
+  
+  /* Transição suave de entrada e saída */
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), visibility 0.4s;
+}
+
+/* Classe de gatilho que o JavaScript vai injetar */
+.mensagem.mostrar {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Volta para a posição original */
+}
+
+.switch-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px;
+    font-family: sans-serif;
+    font-size: 13px; /* Texto pequeno */
+    color: #333;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* Esconde o checkbox quadrado padrão */
+  .switch-container input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
+
+  /* O fundo do Switch (a pista) */
+  .switch-track {
+    position: relative;
+    display: inline-block;
+    width: 28px;  /* Tamanho pequeno */
+    height: 16px; /* Tamanho pequeno */
+    background-color: #ccc;
+    border-radius: 16px;
+    transition: background-color 0.2s;
+  }
+
+  /* A bolinha de dentro do Switch */
+  .switch-track:before {
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+
+  /* Quando o checkbox estiver MARCADO: muda a cor do fundo (Azul) */
+  .switch-container input:checked + .switch-track {
+    background-color: #007bff; /* Cor azul do botão primário */
+  }
+
+  /* Quando o checkbox estiver MARCADO: move a bolinha para a direita */
+  .switch-container input:checked + .switch-track:before {
+    transform: translateX(12px);
+  }
